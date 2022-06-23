@@ -22,6 +22,7 @@ function randomQuote(){
 speechBtn.addEventListener("click", ()=>{
     if(!quoteBtn.classList.contains("loading")){
         let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${authorName.innerText}`);
+        utterance.lang='en-US';
         synth.speak(utterance);
         setInterval(()=>{
             synth.speaking? speechBtn.classList.add("active"):speechBtn.classList.remove("active");
